@@ -1,2 +1,2 @@
 # jscs-brunch
-Check JavaScript code style with jscs to Brunch
+Adds JSCS support to brunch
