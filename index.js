@@ -1,6 +1,16 @@
-var jscs = require('jscs');
+var Checker = require('jscs');
 
-function JSCSLinter(config) {
-  config = config || {};
-  config.plugins = config.plugins || {};
+function JSCSChecker(config) {
+  this.option = config.plugins && config.plugins.JSCS || {};
 }
+
+
+JSCSChecker.prototype.brunchPlugin = true;
+JSCSChecker.prototype.type = 'javascript';
+JSCSChecker.prototype.extension = 'js';
+
+JSCSChecker.prototype.check = function (){
+  Checker.configure(this.option);
+};
+
+module.exports = JSCSChecker;
